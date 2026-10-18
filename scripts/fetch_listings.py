@@ -193,7 +193,7 @@ def parse_iaa_page(h, category, ref):
         acv = next((cells[i + 1] for i, c in enumerate(cells) if c == "ACV:" and i + 1 < len(cells)), "")
         img = ["https://vis.iaai.com/resizer?imageKeys=" + vid + "~SID~I1&width=400&height=300"]
         y, mk, mo = parse_ymm(title)
-        sporty = bool(SPORTY_RE.search(title))
+        sporty = bool(SPORTY_RE.search(title)) and not re.search(r"POLICE|PPV|CARGO|COMMERCIAL", title, re.I)
         out.append(rec(id="iaa-" + vid.replace("~", "-"), source="IAA (Insurance Auto Auctions)", category=category,
                        title=title.title(), year=y, make=mk, model=mo, current_bid=None,
                        current_bid_text=(buy_now + " / " if buy_now else "") + ("Auction date not yet assigned" if unassigned and not end else "Pre-bid open - live bid visible to registered IAA buyers only"),
