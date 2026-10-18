@@ -1,0 +1,30 @@
+name: Update auction listings
+on:
+  schedule:
+    - cron: "*/30 * * * *"     # every 30 min (UTC). GitHub may delay scheduled runs at busy times.
+  workflow_dispatch: {}         # manual "Run workflow" button
+permissions:
+  contents: write
+concurrency:
+  group: update-listings
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Fetch listings (read-only, public pages; no bidding)
+        run: python scripts/fetch_listings.py --out data --site .
+      - name: Commit feed if changed
+        run: |
+          git config user.name  "ssr-feed-bot"
+          git config user.email "ssr-feed-bot@users.noreply.github.com"
+          git add feed.json data/*.json data/*.csv
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Update listings feed $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+# GitHub Pages (Settings > Pages > Deploy from branch: main / root) redeploys automatically on each push.
+# Cloudflare Pages connected to this repo also rebuilds on each push (no build command, output dir "/").

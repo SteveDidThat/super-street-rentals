@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a Car | Super Street Rentals (prototype)</title><meta name="description" content="Super Street Rentals - exotic & ex-rental auction broker and peer-to-peer car rentals (prototype).">
+<link rel="stylesheet" href="assets/style.css"></head><body data-page="request"><main><div class="wrap"><h1>Request this car</h1><div id="picked"></div>
+<form class="f" id="leadForm">
+<label>Full name<input name="name" required></label><label>Email<input type="email" name="email" required></label><label>Phone<input name="phone" required></label>
+<label>Max budget (all-in, USD)<input type="number" name="max_budget" min="0" required></label>
+<label>Listing ID<input name="listing_id" placeholder="from the listing card"></label><label>Listing URL<input name="listing_url"></label>
+<label>Delivery ZIP<input name="zip"></label><label>Timeline<select name="timeline"><option>This auction only</option><option>Within 30 days</option><option>Flexible</option></select></label>
+<label class="full">What are you looking for? / notes<textarea name="notes" rows="4"></textarea></label>
+<label class="full"><span><input type="checkbox" name="ack" required> I understand Super Street Rentals will not bid until I sign a max-bid authorization and pay a deposit, and that auction vehicles are sold as-is.</span></label>
+<div class="full"><button class="btn">Send request</button></div><div class="out full"></div>
+<p class="meta full">Backend TBD: submits to a free Formspree form if configured in assets/config.js, otherwise opens a pre-filled email (mailto) to the placeholder lead inbox.</p></form></div></main><script src="assets/config.js"></script><script src="assets/app.js"></script></body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>List Your Car | Super Street Rentals (prototype)</title><meta name="description" content="Super Street Rentals - exotic & ex-rental auction broker and peer-to-peer car rentals (prototype).">
+<link rel="stylesheet" href="assets/style.css"></head><body data-page="host"><main><div class="wrap"><h1>List your car & earn</h1>
+<p>Share your sports, luxury or exotic car with vetted renters. You set the price and the calendar; we handle marketing, renter screening and payments (coming soon).</p>
+<p class="note warn">Insurance coverage for hosts is not yet in place - this form only joins the waitlist/onboarding queue.</p>
+<form class="f" id="hostForm">
+<label>Full name<input name="name" required></label><label>Email<input type="email" name="email" required></label><label>Phone<input name="phone" required></label><label>City / ZIP<input name="city" required></label>
+<label>Year<input type="number" name="year" required></label><label>Make<input name="make" required></label><label>Model / trim<input name="model" required></label><label>Mileage<input type="number" name="mileage"></label>
+<label>VIN (optional)<input name="vin"></label><label>Desired $/day<input type="number" name="price"></label><label>Availability<select name="availability"><option>Weekends</option><option>Weekdays</option><option>Most days</option></select></label>
+<label>Clean title?<select name="title"><option>Yes</option><option>No / rebuilt</option></select></label>
+<label class="full">Photo links (Google Drive/iCloud) - uploads coming with Supabase Storage<input name="photos"></label>
+<label class="full">Notes<textarea name="notes" rows="3"></textarea></label>
+<label class="full"><span><input type="checkbox" required> My car has no open recalls, is registered and personally insured, and I agree to be contacted about hosting.</span></label>
+<div class="full"><button class="btn">Submit application</button></div><div class="out full"></div></form></div></main><script src="assets/config.js"></script><script src="assets/app.js"></script></body></html>

@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home | Super Street Rentals (prototype)</title><meta name="description" content="Super Street Rentals - exotic & ex-rental auction broker and peer-to-peer car rentals (prototype).">
+<link rel="stylesheet" href="assets/style.css"></head><body data-page="home"><main>
+<section class="hero"><h1>Your dream car, <span style="color:var(--accent)">found & bought</span> at auction.</h1>
+<p>Super Street Rentals watches Bring a Trailer, PCARMARKET, IAA, Copart and more. You pick the car and your max price - we handle registration, bidding, paperwork and transport. Or rent something special from local owners.</p>
+<a class="btn" href="exotic.html">Browse exotic auctions</a> <a class="btn alt" href="ex-rental.html">Ex-rental deals</a> <a class="btn alt" href="rent.html">Rent a car</a></section>
+<div class="wrap"><h2>How the broker model works</h2><div class="steps">
+<div class="step"><b>1</b><h3>We find the car</h3><p>Live listings from major auction sites, updated automatically. Or tell us what you want and we hunt for it.</p></div>
+<div class="step"><b>2</b><h3>You tell us your max</h3><p>Sign a written max-bid authorization and leave a refundable deposit. We never exceed your number.</p></div>
+<div class="step"><b>3</b><h3>We bid & buy</h3><p>Copart/IAA lots often require a dealer or broker license - we bid through our licensed account (licensing TBD).</p></div>
+<div class="step"><b>4</b><h3>Delivered</h3><p>We pay the auction, handle title paperwork and arrange transport. You pay the hammer price + auction fees + our broker fee.</p></div></div>
+<p class="note">Broker fee: <span id="feeTxt">placeholder</span>. This site never places bids automatically.</p>
+<h2>Ending soon <span class="meta" id="updated"></span></h2><div class="grid" id="featured"><p>Loading live feed…</p></div>
+<h2>Rent from local owners</h2><p>Peer-to-peer rentals of sports and exotic cars - <a href="rent.html">search cars</a> or <a href="list-your-car.html">list yours and earn</a>. <span class="demo">DEMO DATA</span></p></div>
+<script>document.addEventListener("DOMContentLoaded",()=>{document.getElementById("feeTxt").textContent=(window.SSR_CONFIG||{}).brokerFeeText})</script></main><script src="assets/config.js"></script><script src="assets/app.js"></script></body></html>
